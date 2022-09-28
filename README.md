@@ -20,7 +20,7 @@
 
 
 
-## Class diagram
+## App functionalities
 
 ```mermaid
 classDiagram
