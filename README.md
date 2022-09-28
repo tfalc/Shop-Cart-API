@@ -31,7 +31,7 @@ Cliente : -Endereco endereco
 
 Sacola : -Long id
 Sacola : -Cliente cliente
-Sacola : -List<Item> itensSacola
+Sacola : -List~Item~ itensSacola
 Sacola : -double valorTotalSacola
 Sacola : -FormaPagamento formaPagamento
 Sacola : -boolean fechada
@@ -48,7 +48,7 @@ Endereco --|> Restaurante
 Restaurante --|> Produto
 Restaurante : -Long id
 Restaurante : -String nome
-Restaurante : -List<Produtos> cardapio
+Restaurante : -List~Produtos~ cardapio
 Restaurante : -Endereco endereco
 
 Sacola --|> Item
