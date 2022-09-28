@@ -48,7 +48,7 @@ Endereco --|> Restaurante
 Restaurante --|> Produto
 Restaurante : -Long id
 Restaurante : -String nome
-Restaurante : -List~Produtos~ cardapio
+Restaurante : -List~Produto~ cardapio
 Restaurante : -Endereco endereco
 
 Sacola --|> Item
