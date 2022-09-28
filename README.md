@@ -42,7 +42,7 @@ Endereco : -String complemento
 
 FormaPagamento --|> Sacola
 FormaPagamento : -DINHEIRO
-FormaPagamento : - MAQUINETA
+FormaPagamento : -MAQUINETA
 
 Endereco --|> Restaurante
 Restaurante --|> Produto
