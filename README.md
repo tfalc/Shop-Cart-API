@@ -31,7 +31,7 @@ Cliente : -Endereco endereco
 
 Sacola : -Long id
 Sacola : -Cliente cliente
-Sacola : - List<Item> itensSacola
+Sacola : -List<Item> itensSacola
 Sacola : -double valorTotalSacola
 Sacola : -FormaPagamento formaPagamento
 Sacola : -boolean fechada
