@@ -1,6 +1,6 @@
 # Market Api
 
- A shop cart API following an iFood dev week.
+ A shop cart API.
 
 
 
