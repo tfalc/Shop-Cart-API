@@ -12,6 +12,7 @@ import com.tfalcon.sacola.service.SacolaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -27,7 +28,7 @@ public class SacolaServiceImpl implements SacolaService {
 
         Sacola sacola = verSacola(itemDto.getIdSacola());
 
-        if(sacola.isFechada()){
+        if (sacola.isFechada()) {
             throw new RuntimeException("Sacola está fechada");
         }
 
@@ -42,22 +43,28 @@ public class SacolaServiceImpl implements SacolaService {
                 .build();
 
         List<Item> itens = sacola.getItens();
-        if(itens.isEmpty()){
+        if (itens.isEmpty()) {
             itens.add(itemParaInserir);
-        }else{
+        } else {
             Restaurante restaurante = itens.get(0).getProduto().getRestaurante();
             Restaurante restauranteDoProduto = itemParaInserir.getProduto().getRestaurante();
 
-            if(restaurante.equals(restauranteDoProduto)){
+            if (restaurante.equals(restauranteDoProduto)) {
                 itens.add(itemParaInserir);
-            }else {
+            } else {
                 throw new RuntimeException("Não foi possível adicionar itens na sacola. Feche a sacola atual.");
             }
         }
 
+        List<Double> valorItens = new ArrayList<>();
+        for (Item itemUnitario : itens) {
+            double valorProduto = itemUnitario.getProduto().getValorUnitario() * itemUnitario.getQuantidade();
+            valorItens.add(valorProduto);
+        }
+
         sacolaRepository.save(sacola);
 
-        return itemRepository.save(itemParaInserir);
+        return itemParaInserir;
     }
 
     @Override
