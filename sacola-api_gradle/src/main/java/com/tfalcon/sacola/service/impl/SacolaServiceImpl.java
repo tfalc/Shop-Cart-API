@@ -20,7 +20,6 @@ public class SacolaServiceImpl implements SacolaService {
 
     private final SacolaRepository sacolaRepository;
     private final ProdutoRepository produtoRepository;
-
     private final ItemRepository itemRepository;
 
     @Override
@@ -57,7 +56,7 @@ public class SacolaServiceImpl implements SacolaService {
         }
 
         sacolaRepository.save(sacola);
-        
+
         return itemRepository.save(itemParaInserir);
     }
 
