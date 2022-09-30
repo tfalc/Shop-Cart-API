@@ -4,9 +4,11 @@ import com.tfalcon.sacola.model.Item;
 import com.tfalcon.sacola.model.Sacola;
 import com.tfalcon.sacola.resource.dto.ItemDto;
 import com.tfalcon.sacola.service.SacolaService;
+import io.swagger.annotations.Api;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+@Api(value = "/api/v1/sacola")
 @RestController
 @RequestMapping("/api/v1/sacola")
 @RequiredArgsConstructor
